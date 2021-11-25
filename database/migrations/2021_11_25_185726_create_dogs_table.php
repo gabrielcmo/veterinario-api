@@ -15,6 +15,12 @@ class CreateDogsTable extends Migration
     {
         Schema::create('dogs', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('breed');
+            $table->double('weight', 5, 2);
+            $table->foreignId('user_id')->constraint('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }
