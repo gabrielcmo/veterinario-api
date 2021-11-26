@@ -18,7 +18,7 @@ class TreatmentStatus extends Model
         'name',
     ];
 
-    protected $timestamps = false;
+    public $timestamps = false;
 
     public function treatments(){
         return $this->hasMany('App\Models\Treatment');

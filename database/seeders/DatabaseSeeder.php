@@ -3,6 +3,11 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use \App\Models\User;
+use \App\Models\Dog;
+use \App\Models\Doctor;
+use \App\Models\Treatment;
+use DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,8 +18,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(10)->create();
-        \App\Models\Dog::factory(10)->create();
-        \App\Models\Doctor::factory(10)->create();
+        /*
+            Seeder da tabela Status do Tratamento
+        */
+        DB::table('treatment_statuses')->insert([
+            ['name' => "in diagnosis"],
+            ['name' => "waiting for treatment"],
+            ['name' => "in treatment"], 
+            ['name' => "healed"]
+        ]);
+
+        User::factory(10)->create();
+        Dog::factory(10)->create();
+        Doctor::factory(10)->create();
+        Treatment::factory(10)->create();
     }
 }

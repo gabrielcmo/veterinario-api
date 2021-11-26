@@ -15,6 +15,7 @@ class CreateTreatmentStatusesTable extends Migration
     {
         Schema::create('treatment_statuses', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->timestamps();
         });
     }

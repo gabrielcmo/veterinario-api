@@ -15,10 +15,13 @@ class CreateTreatmentsTable extends Migration
     {
         Schema::create('treatments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('dog_id')->nullable()->constraint('dogs')
+            $table->foreignId('dog_id')->constraint('dogs')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->foreignId('doctor_id')->nullable()->constraint('doctors')
+            $table->foreignId('doctor_id')->constraint('doctors')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreignId('status_id')->constraint('treatment_statuses')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->string('condition');
