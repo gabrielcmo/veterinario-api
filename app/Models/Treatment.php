@@ -17,6 +17,7 @@ class Treatment extends Model
     protected $fillable = [
         'dog_id',
         'doctor_id',
+        'status_id',
         'condition',
     ];
 
@@ -26,5 +27,9 @@ class Treatment extends Model
 
     public function dog(){
         return $this->belongsTo('App\Models\Dog');
+    }
+
+    public function status(){
+        return $this->belongsTo('App\Models\TreatmentStatus');
     }
 }

@@ -14,4 +14,8 @@ class DogController extends Controller
     function getDogOwner($id){
         return Dog::find($id)->user;
     }
+
+    function getDogTreatments($id){
+        return Dog::find($id)->treatments;
+    }
 }
