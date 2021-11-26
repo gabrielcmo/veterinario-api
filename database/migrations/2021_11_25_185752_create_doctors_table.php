@@ -17,7 +17,7 @@ class CreateDoctorsTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('license');
-            $table->integer('phone');
+            $table->string('phone');
             $table->string('address');
             $table->timestamps();
         });
