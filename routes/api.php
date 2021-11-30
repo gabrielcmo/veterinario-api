@@ -26,3 +26,4 @@ Route::get('/dog/{id}/owner', [DogController::class, 'getDogOwner'])->name('getD
 Route::get('/dog/{id}/treatments', [DogController::class, 'getDogTreatments'])->name('getDogTreatment');
 
 Route::get('/doctor/{id}', [DoctorController::class, 'getDoctor'])->name('getDoctor');
+Route::get('/doctor/{id}/phone', [DoctorController::class, 'getDoctorPhone'])->name('getDoctorPhone');

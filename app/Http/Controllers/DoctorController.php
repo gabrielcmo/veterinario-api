@@ -10,4 +10,8 @@ class DoctorController extends Controller
     public function getDoctor($id){
         return Doctor::find($id);
     }
+    
+    public function getDoctorPhone($id){
+        return Doctor::find($id)->phone;
+    }
 }
